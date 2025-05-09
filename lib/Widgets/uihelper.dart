@@ -1,17 +1,27 @@
 import 'package:flutter/material.dart';
 
 class UiHelper {
-  static CustomeTextButton({
-    required String text,
+  static CustomeButton({
     required VoidCallback callback,
+    required String btnName,
   }) {
-    return TextButton(
-      onPressed: () {
-        callback();
-      },
-      child: Text(
-        text,
-        style: TextStyle(color: Color(0XFF3797EF), fontSize: 12),
+    return SizedBox(
+      height: 50,
+      width: 343,
+      child: ElevatedButton(
+        onPressed: () {
+          callback();
+        },
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Color(0XFF3797EF),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+        ),
+        child: Center(
+          child: Text(
+            btnName,
+            style: TextStyle(fontSize: 14, color: Colors.white),
+          ),
+        ),
       ),
     );
   }

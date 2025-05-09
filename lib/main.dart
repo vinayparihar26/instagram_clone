@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'Screens/SignUp/signupscreen.dart';
 import 'Screens/Splash/splash.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Instagram',
       theme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: Signupscreen(),
     );
   }
 }

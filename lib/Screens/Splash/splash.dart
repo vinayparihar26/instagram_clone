@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/Widgets/uihelper.dart';
+import 'package:instagram_clone/responsive.dart';
 import '../Login/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -16,7 +17,9 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(Duration(seconds: 1), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => LoginScreen()));
+        context,
+        MaterialPageRoute(builder: (context) => LoginScreen()),
+      );
     });
   }
 
@@ -28,9 +31,14 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             UiHelper.CustomImage(imgUrl: "instagram.png"),
-            SizedBox(height: 20),
-            Text('Instagram',
-              style: TextStyle(fontSize: 24, color: Colors.white),),
+            SizedBox(height: 0.20 * getHeight(context)),
+            Text(
+              'Instagram',
+              style: TextStyle(
+                fontSize: 0.24 * getResponsiveText(context),
+                color: Colors.white,
+              ),
+            ),
           ],
         ),
       ),
