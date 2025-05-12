@@ -39,6 +39,19 @@ class UiHelper {
     );
   }
 
+  static CustomTextButton2({
+    required VoidCallback callback,
+    required String text,
+  }) {
+    return TextButton(
+      onPressed: callback,
+      child: Text(
+        text,
+        style: TextStyle(color: Color(0XFF3797EF), fontSize: 15),
+      ),
+    );
+  }
+
   static CustomTextField({
     required TextEditingController controller,
     required String hintText,
@@ -74,6 +87,9 @@ class UiHelper {
   }
 
   static CustomImage({required String imgUrl}) {
-    return Image.asset("assets/images/$imgUrl", width: 90, height: 90);
+    return Image.asset("assets/images/$imgUrl", width: 130, height: 90);
+  }
+  static CustomImage2({required String imgUrl}) {
+    return Image.asset("assets/images/$imgUrl", width: 20, height: 20);
   }
 }

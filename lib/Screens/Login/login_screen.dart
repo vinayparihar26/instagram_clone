@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/Screens/SignUp/signupscreen.dart';
+import 'package:instagram_clone/Screens/bottomnav/bottomnav.dart';
 import 'package:instagram_clone/Widgets/uihelper.dart';
 import 'package:instagram_clone/responsive.dart';
 
@@ -16,16 +17,8 @@ class LoginScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              'Instagram',
-              style: TextStyle(
-                fontSize: 26 * getResponsive(context),
-                color: Colors.white,
-              ),
-            ),
-            Image.asset("assets/images/Instagram Logo.png"),
+            UiHelper.CustomImage(imgUrl: "Instagram Logo.png"),
             // 0. * getHeight();
-            SizedBox(height: 0.020 * getHeight(context)),
             UiHelper.CustomTextField(
               controller: emailController,
               hintText: "Email",
@@ -55,35 +48,41 @@ class LoginScreen extends StatelessWidget {
               ],
             ),
             SizedBox(height: 0.010 * getHeight(context)),
-            UiHelper.CustomeButton(callback: () {}, btnName: "Login In"),
+            UiHelper.CustomeButton(
+              callback: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => BottomNavScreen()),
+                );
+              },
+              btnName: "Login",
+            ),
             SizedBox(height: 0.010 * getHeight(context)),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                UiHelper.CustomImage(imgUrl: "fb.png"),
+                UiHelper.CustomImage2(imgUrl: "fb.png"),
+
                 UiHelper.CustomTextButton(
                   callback: () {},
                   text: "Login with facebook",
                 ),
               ],
             ),
-            SizedBox(height: 0.010 * getHeight(context)),
 
             Text(
               "OR",
               style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
             ),
 
-            SizedBox(height: 0.010 * getHeight(context)),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   "Don't have an account?",
-                  style: TextStyle(fontSize: 14, color: Colors.white),
+                  style: TextStyle(fontSize: 13, color: Colors.white),
                 ),
-                UiHelper.CustomTextButton(
+                UiHelper.CustomTextButton2(
                   callback: () {
                     Navigator.pushReplacement(
                       context,

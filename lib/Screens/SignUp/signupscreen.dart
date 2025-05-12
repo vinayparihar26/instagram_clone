@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/Screens/Login/login_screen.dart';
 import 'package:instagram_clone/Widgets/uihelper.dart';
@@ -18,24 +17,23 @@ class Signupscreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             UiHelper.CustomImage(imgUrl: "Instagram Logo.png"),
-
             UiHelper.CustomTextField(
               controller: emailController,
-              hintText: "email",
+              hintText: "Email",
               toHide: false,
               textInputType: TextInputType.emailAddress,
             ),
             SizedBox(height: 0.010 * getHeight(context)),
             UiHelper.CustomTextField(
               controller: passwordController,
-              hintText: "password",
+              hintText: "Password",
               toHide: true,
               textInputType: TextInputType.text,
             ),
             SizedBox(height: 0.010 * getHeight(context)),
             UiHelper.CustomTextField(
               controller: userNameController,
-              hintText: "userName",
+              hintText: "User Name",
               toHide: false,
               textInputType: TextInputType.name,
             ),
@@ -52,7 +50,7 @@ class Signupscreen extends StatelessWidget {
                   style: TextStyle(color: Colors.grey, fontSize: 14),
                 ),
 
-                UiHelper.CustomTextButton(
+                UiHelper.CustomTextButton2(
                   callback: () {
                     Navigator.pushReplacement(
                       context,
