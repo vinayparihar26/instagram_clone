@@ -89,7 +89,12 @@ class UiHelper {
   static CustomImage({required String imgUrl}) {
     return Image.asset("assets/images/$imgUrl", width: 130, height: 90);
   }
+
   static CustomImage2({required String imgUrl}) {
     return Image.asset("assets/images/$imgUrl", width: 20, height: 20);
+  }
+
+  static CustomImage3({required String imgUrl}) {
+    return Image.asset("assets/images/$imgUrl", width: double.infinity, height: 375);
   }
 }
